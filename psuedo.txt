@@ -18,7 +18,7 @@ when I answer a question incorrectly, time is subtracted from the game-clock
 
 the game is completed when all of the questions are answered or when the clock reaches zero
 
-when the game is complete, I can save my initials and my score
+when the game is complete, I can save my initials along with my score
 
 
 
