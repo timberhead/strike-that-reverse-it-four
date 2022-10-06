@@ -1,4 +1,7 @@
 
+
+
+
 var startBtnEl = document.querySelector("#start");
 var quizContainer = document.querySelector("#quiz");
 var currentQuestionIndex = 0;
@@ -61,7 +64,7 @@ function getquestion() {
     console.log(currentQuestion.questionTitle)
     choicesEl.innerHTML = "";
 
-    for (var i = 0; i < currentQuestion.choices.length; i++) {      //  what's wrong with length
+    for (var i = 0; i < currentQuestion.choices.length; i++) {     
 
         var choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("value", currentQuestion.choices[i]);
@@ -85,25 +88,12 @@ function startTimer(){
         time--
         display.textContent = time
 
-        // minutes = parseInt(timer / 60, 10);
-        // seconds = parseInt(timer % 60, 10);
-
-        // minutes = minutes <10 ? "0" + minutes : minutes;
-        // seconds = seconds <10 ? "0" + seconds : seconds;
-
-        // display.textContent = minutes + ":" + seconds;      // what's wrong here
-
         if (time <= 0){
 
             time === 0;
             display.textContent = time
             endGame()
-        }
-
-        // if (--timer = 0){
-
-        //     timer = stop;
-        // } 
+        } 
 
     }, 1000);
 
@@ -131,7 +121,7 @@ function startQuiz() {
 }
 
 
-startBtnEl.addEventListener("click", startQuiz);    //  why doesn't this work
+startBtnEl.addEventListener("click", startQuiz);   
 
 
 
