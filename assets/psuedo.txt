@@ -1,0 +1,35 @@
+create a code quiz game
+
+the quiz game is timed
+
+there is a game-clock that counts down to zero
+
+there is a start button
+
+the game-clock starts when start button is clicked
+
+I am also presented with the first question when start button is clicked
+
+all questions are multiple choice
+
+when I answer a question correctly, I am presented with the next question
+
+when I answer a question incorrectly, time is subtracted from the game-clock
+
+the game is completed when all of the questions are answered or when the clock reaches zero
+
+when the game is complete, I can save my initials along with my score
+
+
+
+how many questions?
+
+what types of coding should the questions include?     just stick to JS 
+
+how many seconds does the game-clock start with?     60 seconds per question
+
+how many seconds are subtracted from the game-clock for an incorrect answer?     subtract 30 seconds
+
+
+** start the code quiz game with one multiple choice question.  make the game work with one question
+and the game-clock  

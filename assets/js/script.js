@@ -3,8 +3,9 @@ var startBtnEl = document.querySelector("#start");
 var quizContainer = document.querySelector("#quiz");
 var currentQuestionIndex = 0;
 var choicesEl = document.querySelector("#choices")
-
-
+var timer;
+var time = 90
+var display = document.querySelector("#time");
  
 
 var question = [{
@@ -38,6 +39,15 @@ if(this.value === question[currentQuestionIndex].answer){
     currentQuestionIndex ++
     getquestion()
 }
+
+time = time - 10
+if (time <= 0){
+
+    time === 0;
+    display.textContent = time
+    endGame()
+}
+display.textContent = time
 }
 
 console.log(question[0].questionTitle)
@@ -69,21 +79,25 @@ function getquestion() {
 
 }
 
-function startTimer(duration, display){
-    var timer = duration, stop, minutes, seconds;
-    setInterval(function () {
+function startTimer(){
+    timer = setInterval(function () {
 
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+        time--
+        display.textContent = time
 
-        minutes = minutes <10 ? "0" + minutes : minutes;
-        seconds = seconds <10 ? "0" + seconds : seconds;
+        // minutes = parseInt(timer / 60, 10);
+        // seconds = parseInt(timer % 60, 10);
 
-        display.textContent = minutes + ":" + seconds;      // what's wrong here
+        // minutes = minutes <10 ? "0" + minutes : minutes;
+        // seconds = seconds <10 ? "0" + seconds : seconds;
 
-        if (--timer < 0){
+        // display.textContent = minutes + ":" + seconds;      // what's wrong here
 
-            timer = duration;
+        if (time <= 0){
+
+            time === 0;
+            display.textContent = time
+            endGame()
         }
 
         // if (--timer = 0){
@@ -96,25 +110,28 @@ function startTimer(duration, display){
 
 }
 
-window.onload = function(){
 
-    var fiveMinutes = 60 * 5,
-    display = document.querySelector("#time");
-    startTimer(fiveMinutes, display);
-};
+function endGame() {
+    clearInterval(timer)
+}
+
+ 
 
 function startQuiz() {
     var startScreenEl = document.querySelector("#start-screen");
     startScreenEl.setAttribute("class", "hide");
     quizContainer.classList.remove("hide");
     console.log("start");
+    display.textContent = time
+    startTimer();
+
 
     getquestion()
-    startTimer()
+    
 }
 
 
-startBtnEl.addEventListener("click", startQuiz, startTimer);    //  why doesn't this work
+startBtnEl.addEventListener("click", startQuiz);    //  why doesn't this work
 
 
 
